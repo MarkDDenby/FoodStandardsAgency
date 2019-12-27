@@ -1,0 +1,69 @@
+﻿
+body {
+    background-color:lightgray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+    margin-top: 30px
+}
+
+table, tr, td {
+    background-color: black;
+    padding: 0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 0px
+}
+
+.dropdown {
+    background-color: white;
+    font-size:large;
+}
+
+img {
+    display: block;
+}
+
+td.pass {
+    background-color: #0559AA;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black
+}
+
+td.improvement {
+    background-color: #C81A07;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black
+}
+
+td.rating {
+    background-color: #CDE14A;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+
+#busyIndicator {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -15px;
+}
