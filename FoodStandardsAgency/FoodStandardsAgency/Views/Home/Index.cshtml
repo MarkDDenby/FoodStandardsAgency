@@ -1,0 +1,51 @@
+﻿@model FoodStandardsAgency.Models.HomeControllerViewModel 
+@{
+}
+
+@Html.DropDownListFor(m => m.Id, Model.AuthorityListItems, "Select Authority", new  {  Class = "dropdown", id = "authorityList" }) 
+
+<!--div to hold the partial view that contains the rating results-->
+<div id = "partialDiv">  
+    @Html.Partial("AuthorityRatingPartial")
+</div> 
+
+<!--div to hold the busy indication-->
+<div id="busyIndicator">
+    <img src="images/ajax-loader.gif">
+</div>
+
+<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+<script>  
+    $(document).ready(function()  
+    {  
+        $("#busyIndicator").hide();
+        $("#partialDiv").hide();
+    
+        $("#authorityList").on("change", function()  
+        {  
+            $("#busyIndicator").show();
+            $("#partialDiv").hide();
+    
+            $.ajax(  
+            {  
+                url: '/Home/GetAuthorityRating?authorityId=' + $('#authorityList').val(),  
+                type: 'GET',  
+                data: "",  
+                contentType: 'application/json; charset=utf-8',  
+                success: function(data)  
+                {  
+                    $("#busyIndicator").hide();
+                    $("#partialDiv").show();
+    
+                    $("#partialDiv").html(data);  
+                },  
+                error: function (request, status, error) 
+                {  
+                    $("#busyIndicator").hide();
+    
+                    alert('An unexpected error occurred when trying to retrieve the selected authorities ratings (' + error + ')');
+                }
+            });  
+        });  
+    });
+</script>  

@@ -1,0 +1,17 @@
+﻿@model FoodStandardsAgency.Models.HomeControllerViewModel 
+@{
+}
+  
+<table>
+    @foreach (var item in Model.AuthorityRating)
+    {
+        <tr>
+            <td>                 
+                <img src= "@Url.Content(item.RatingImagePath)"/>
+            </td>
+            <td class="@(item.RatingKey == "Pass" ? "pass" : (item.RatingKey == "Improvement Required" ? "improvement" : "rating"))">                          @Html.DisplayFor(modelItem => item.Percentage)  
+            </td>
+        </tr>
+    }
+</table>
+

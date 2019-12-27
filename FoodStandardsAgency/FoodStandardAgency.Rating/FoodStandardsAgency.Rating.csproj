@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contract\ServiceClient.Contracts.csproj" />
+    <ProjectReference Include="..\Models\ServiceClient.Models.csproj" />
+    <ProjectReference Include="..\ServiceClients\ServiceClient.csproj" />
+  </ItemGroup>
+</Project>
